@@ -40,6 +40,9 @@ clock7_name = "NOT-LOCAL"
 from tkinter import *
 import time
 from PIL import Image, ImageTk
+import datetime as dt
+
+
 
 root = Tk()
 root.geometry('2000x500+1500+00')
@@ -77,7 +80,51 @@ canvas2.grid(row=1,column=2,columnspan=4)
 
 
 ############################################################
+class SimpleApp(object):
+    def __init__(self, master, filename, width, height, xcoord, ycoord, rspan, cspan, resizeX, resizeY, **kwargs):
+        self.master = master
+        self.filename = filename
+        self.width = width
+        self.height = height
+        self.xcoord = xcoord
+        self.ycoord = ycoord
+        self.rspan = rspan
+        self.cspan = cspan
+        self.resizeX = resizeX
+        self.resizeY = resizeY
+        self.canvas = Canvas(master, width=self.width, height=self.height, bd= 0 , highlightthickness = 0, bg = 'black')
+        self.canvas.grid(row=self.xcoord,column=self.ycoord, rowspan=self.rspan, columnspan=self.cspan)
+        self.process_next_frame = self.draw().__next__  # Using "next(self.draw())" doesn't work
+        master.after(1, self.process_next_frame)
 
+
+    def draw(self):
+        image = Image.open(self.filename)
+        image = image.resize((self.resizeX, self.resizeY), Image.ANTIALIAS)
+        angle = 0
+        print(self.process_next_frame)
+        oldtime=time.time()
+        while True:
+            if angle==0:
+                if (int(time.time())%60 < 2):
+                    angle+=1
+                tkimage = ImageTk.PhotoImage(image.rotate(angle))
+                canvas_obj = self.canvas.create_image(self.width/2, self.height/2, image=tkimage)
+                self.master.after_idle(self.process_next_frame)
+                yield
+                self.canvas.delete(canvas_obj)
+                time.sleep(0.002)
+            else:
+                tkimage = ImageTk.PhotoImage(image.rotate(angle))
+                canvas_obj = self.canvas.create_image(self.width/2, self.height/2, image=tkimage)
+                self.master.after_idle(self.process_next_frame)
+                yield
+                self.canvas.delete(canvas_obj)
+                angle += 1
+                angle %= 360
+                time.sleep(0.002)
+                oldtime=time.time()
+############################################################
 clock=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
 clock.grid(row=3,column=2)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock_name, bg ="black", relief= FLAT)
@@ -139,6 +186,5 @@ def timer():
         clock7.config(text= timezoner(clock7_zone))
     clock.after(200, timer)
 timer()
- 
- 
+app = SimpleApp(root, 'logo.JPG',500,360,1,1,5,1,400,400)
 root.mainloop()
