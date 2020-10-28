@@ -133,18 +133,21 @@ class SimpleApp(object):
 ############################################################
 def fadelogos(full_logo,starsonly,starsmotto):
     alpha = 0
+    counter=0
     stimulation=random.randint(30,300)
     while True:
-        if (int(time.time())%stimulation < 2):
+        counter+=1
+        if (counter==stimulation):
             alpha = 0
-            stimulation=random.randint(61,121)
+            counter=0
+            stimulation=random.randint(61,300)
         else:
             pass
         if 1.0 > alpha:
             new_img = Image.blend(full_logo,starsonly,alpha)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
-            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
+            canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             alpha = alpha + 0.05
             time.sleep(.1)
@@ -153,8 +156,8 @@ def fadelogos(full_logo,starsonly,starsmotto):
             beta=alpha-1
             new_img = Image.blend(starsonly,starsmotto,beta)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
-            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
+            canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             alpha = alpha + 0.05
             time.sleep(.1)
@@ -164,8 +167,8 @@ def fadelogos(full_logo,starsonly,starsmotto):
             beta=alpha-2
             new_img = Image.blend(starsmotto,full_logo,beta)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
-            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
+            canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             alpha = alpha + 0.05
             time.sleep(.1)
@@ -176,8 +179,8 @@ def fadelogos(full_logo,starsonly,starsmotto):
             beta=1
             new_img = Image.blend(starsmotto,full_logo,beta)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
-            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
+            canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             root.update()
             pass
