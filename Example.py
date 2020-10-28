@@ -78,42 +78,42 @@ canvas2.grid(row=1,column=2,columnspan=4)
 
 ############################################################
 
-clock=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
+clock=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
 clock.grid(row=3,column=2)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock_name, bg ="black", relief= FLAT)
 zone.grid(row=2,column=2)
 
-clock1=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "",bg='#292929', relief= SUNKEN)
+clock1=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "",bg='#292929', relief= SUNKEN)
 clock1.grid(row=3,column=3)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock1_name, bg ="black", relief= FLAT)
 zone.grid(row=2,column=3)
 
-clock2=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock2=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
 clock2.grid(row=3,column=4)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock2_name, bg ="black", relief= FLAT)
 zone.grid(row=2,column=4)
 
-clock3=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock3=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
 clock3.grid(row=3,column=5)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock3_name, bg ="black", relief= FLAT)
 zone.grid(row=2,column=5)
 
-clock4=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "both",bg='#292929', relief= SUNKEN)
+clock4=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "both",bg='#292929', relief= SUNKEN)
 clock4.grid(row=5,column=2)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock4_name, bg ="black", relief= FLAT)
 zone.grid(row=4,column=2)
 
-clock5=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock5=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
 clock5.grid(row=5,column=3)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock5_name, bg ="black", relief= FLAT)
 zone.grid(row=4,column=3)
 
-clock6=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock6=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
 clock6.grid(row=5,column=4)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock6_name, bg ="black", relief= FLAT)
 zone.grid(row=4,column=4)
 
-clock7=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock7=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
 clock7.grid(row=5,column=5)
 zone7=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock7_name, bg ="black", relief= FLAT)
 zone7.grid(row=4,column=5)
