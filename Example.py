@@ -55,11 +55,11 @@ timenow=''
 
 ##########################################################
 sizex=250
-sizey=200
+sizey=180
 
 canvas = Canvas(root, width = (2*sizex), height = (2*sizey),bg = "black")  
 img = Image.open("logo.JPG")
-img = img.resize((400, 400), Image.ANTIALIAS)   
+img = img.resize((400, 360), Image.ANTIALIAS)   
 img = ImageTk.PhotoImage(img)
 canvas.create_image(sizex, sizey, image=img)
 canvas.grid(row=1,column=1,rowspan=5)
