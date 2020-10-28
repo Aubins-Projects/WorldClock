@@ -167,7 +167,7 @@ def fadelogos(full_logo,starsonly,starsmotto):
             beta=alpha-2
             new_img = Image.blend(starsmotto,full_logo,beta)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (360), bg= 'white')
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
             canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             alpha = alpha + 0.05
@@ -179,7 +179,7 @@ def fadelogos(full_logo,starsonly,starsmotto):
             beta=1
             new_img = Image.blend(starsmotto,full_logo,beta)
             modifying_image = ImageTk.PhotoImage(new_img)
-            canvas2 = Canvas(root, width = (500), height = (360), bg= 'white')
+            canvas2 = Canvas(root, width = (500), height = (360), bg= 'black')
             canvas2.create_image(250, 180, image=modifying_image)
             canvas2.grid(row=1,column=1, rowspan=5)
             root.update()
