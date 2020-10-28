@@ -45,26 +45,26 @@ timenow=''
 #cframe.pack()
 
 ##########################################################
-sizex=200
+sizex=250
 sizey=200
 
-canvas = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
+canvas = Canvas(root, width = (2*sizex), height = (2*sizey),bg = "black")  
 img = Image.open("logo.JPG")
-img = img.resize((400, 400), Image.ANTIALIAS)   
+img = img.resize((100, 100), Image.ANTIALIAS)   
 img = ImageTk.PhotoImage(img)
 canvas.create_image(sizex, sizey, image=img)
 canvas.grid(row=1,column=1,rowspan=3)
 
 ###########################################################
-sizex=2000
-sizey=200
+sizex=700
+sizey=40
 
-canvas = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
+canvas2 = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
 img = Image.open("hunters.JPG")
-img = img.resize((200, 2000), Image.ANTIALIAS)   
+img = img.resize((800, 80), Image.ANTIALIAS)   
 img = ImageTk.PhotoImage(img)
-canvas.create_image(sizex, sizey, image=img)
-canvas.grid(row=1,column=2,columnspan=3)
+canvas2.create_image(sizex, sizey, image=img)
+canvas2.grid(row=1,column=2,columnspan=4)
 
 
 ############################################################
