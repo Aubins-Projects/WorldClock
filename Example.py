@@ -13,13 +13,22 @@
 ###################################################
 #Change clock#_zones below
 ###################################################
+
+clock_name = "LOCAL"
 clock1_zone = 1
+clock1_name = "NOT-LOCAL"
 clock2_zone = 2
+clock2_name = "NOT-LOCAL"
 clock3_zone = 3
+clock3_name = "NOT-LOCAL"
 clock4_zone = -1
+clock4_name = "NOT-LOCAL"
 clock5_zone = -2
+clock5_name = "NOT-LOCAL"
 clock6_zone = -3
+clock6_name = "NOT-LOCAL"
 clock7_zone = 10
+clock7_name = "NOT-LOCAL"
 
 
 ##########################################################
@@ -50,48 +59,64 @@ sizey=200
 
 canvas = Canvas(root, width = (2*sizex), height = (2*sizey),bg = "black")  
 img = Image.open("logo.JPG")
-img = img.resize((100, 100), Image.ANTIALIAS)   
+img = img.resize((400, 400), Image.ANTIALIAS)   
 img = ImageTk.PhotoImage(img)
 canvas.create_image(sizex, sizey, image=img)
-canvas.grid(row=1,column=1,rowspan=3)
+canvas.grid(row=1,column=1,rowspan=5)
 
 ###########################################################
 sizex=700
 sizey=40
 
 canvas2 = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
-img = Image.open("hunters.JPG")
-img = img.resize((800, 80), Image.ANTIALIAS)   
-img = ImageTk.PhotoImage(img)
-canvas2.create_image(sizex, sizey, image=img)
+img2 = Image.open("hunters.JPG")
+img2 = img2.resize((800, 80), Image.ANTIALIAS)   
+img2 = ImageTk.PhotoImage(img2)
+canvas2.create_image(sizex, 50, image=img2)
 canvas2.grid(row=1,column=2,columnspan=4)
 
 
 ############################################################
 
-clock=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
-clock.grid(row=2,column=2)
+clock=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
+clock.grid(row=3,column=2)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock_name, bg ="black", relief= FLAT)
+zone.grid(row=2,column=2)
 
-clock1=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "",bg='#292929', relief= SUNKEN)
-clock1.grid(row=2,column=3)
+clock1=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "",bg='#292929', relief= SUNKEN)
+clock1.grid(row=3,column=3)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock1_name, bg ="black", relief= FLAT)
+zone.grid(row=2,column=3)
 
-clock2=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock2.grid(row=2,column=4)
+clock2=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock2.grid(row=3,column=4)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock2_name, bg ="black", relief= FLAT)
+zone.grid(row=2,column=4)
 
-clock3=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock3.grid(row=2,column=5)
+clock3=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock3.grid(row=3,column=5)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock3_name, bg ="black", relief= FLAT)
+zone.grid(row=2,column=5)
 
-clock4=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "both",bg='#292929', relief= SUNKEN)
-clock4.grid(row=3,column=2)
+clock4=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "both",bg='#292929', relief= SUNKEN)
+clock4.grid(row=5,column=2)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock4_name, bg ="black", relief= FLAT)
+zone.grid(row=4,column=2)
 
-clock5=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock5.grid(row=3,column=3)
+clock5=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock5.grid(row=5,column=3)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock5_name, bg ="black", relief= FLAT)
+zone.grid(row=4,column=3)
 
-clock6=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock6.grid(row=3,column=4)
+clock6=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock6.grid(row=5,column=4)
+zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock6_name, bg ="black", relief= FLAT)
+zone.grid(row=4,column=4)
 
-clock7=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock7.grid(row=3,column=5)
+clock7=Label(root, padx=25, pady=20, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
+clock7.grid(row=5,column=5)
+zone7=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock7_name, bg ="black", relief= FLAT)
+zone7.grid(row=4,column=5)
 
 def timezoner(hours):
     global timenow
