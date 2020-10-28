@@ -134,13 +134,13 @@ class SimpleApp(object):
 def fadelogos(full_logo,starsonly,starsmotto):
     alpha = 0
     counter=0
-    stimulation=random.randint(30,300)
+    stimulation=random.randint(300,1500)
     while True:
         counter+=1
         if (counter==stimulation):
             alpha = 0
             counter=0
-            stimulation=random.randint(61,300)
+            stimulation=random.randint(300,1500)
         else:
             pass
         if 1.0 > alpha:
