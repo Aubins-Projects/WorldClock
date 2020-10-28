@@ -1,7 +1,7 @@
 from tkinter import *
 import time
 root = Tk()
-root.geometry('600x200+350+300')
+root.geometry('2000x500+350+300')
 root.wm_attributes('-type', 'splash')
 
  
