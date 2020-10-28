@@ -38,32 +38,32 @@ root.overrideredirect(1)
 root.bind('<Escape>',lambda e: root.destroy())
  
 timenow=''
-cframe =Frame(root, width=1920, height=500, bg='black', relief=GROOVE)
-cframe.pack()
+#cframe =Frame(root, width=1920, height=500, bg='black', relief=GROOVE)
+#cframe.pack()
  
-clock=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= timenow,bg='gray', relief= SUNKEN)
-clock.pack()
+clock=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= timenow,bg='gray', relief= SUNKEN)
+clock.grid(row=1,column=1)
 
-clock1=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "",bg='gray', relief= SUNKEN)
-clock1.pack()
+clock1=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "",bg='gray', relief= SUNKEN)
+clock1.grid(row=1,column=2)
 
-clock2=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock2.pack()
+clock2=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
+clock2.grid(row=1,column=3)
 
-clock3=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock3.pack()
+clock3=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
+clock3.grid(row=1,column=4)
 
-clock4=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock4.pack()
+clock4=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "both",bg='gray', relief= SUNKEN)
+clock4.grid(row=2,column=1)
 
-clock5=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock5.pack()
+clock5=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
+clock5.grid(row=2,column=2)
 
-clock6=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock6.pack()
+clock6=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
+clock6.grid(row=2,column=3)
 
-clock7=Label(cframe, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
-clock7.pack()
+clock7=Label(root, padx=25, pady=40, bd=3, fg= 'dark green',font=('arial',48,'bold'),text= "test",bg='gray', relief= SUNKEN)
+clock7.grid(row=2,column=4)
 
 def timezoner(hours):
     global timenow
