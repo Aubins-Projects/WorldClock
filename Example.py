@@ -57,7 +57,7 @@ timenow=''
 sizex=250
 sizey=180
 
-canvas = Canvas(root, width = (2*sizex), height = (2*sizey),bg = "black")  
+canvas = Canvas(root, width = (2*sizex), height = (2*sizey),bg = "black", bd= 0 , highlightthickness = 0)  
 img = Image.open("logo.JPG")
 img = img.resize((400, 360), Image.ANTIALIAS)   
 img = ImageTk.PhotoImage(img)
