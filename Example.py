@@ -41,7 +41,7 @@ from tkinter import *
 import time
 from PIL import Image, ImageTk
 import datetime as dt
-
+import random
 
 
 root = Tk()
@@ -72,13 +72,19 @@ sizex=700
 sizey=40
 
 canvas2 = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
-img2 = Image.open("hunters.JPG")
+img2 = Image.open("hunter_ops.JPG")
 img2 = img2.resize((800, 80), Image.ANTIALIAS)   
 img2 = ImageTk.PhotoImage(img2)
 canvas2.create_image(sizex, 50, image=img2)
 canvas2.grid(row=1,column=2,columnspan=4)
 
-
+############################################################
+full_logo = Image.open("logo.JPG").convert("RGBA")
+full_logo = full_logo.resize((400, 360), Image.ANTIALIAS) 
+starsonly = Image.open("stars.JPG").convert("RGBA")
+starsonly = starsonly.resize((400, 360), Image.ANTIALIAS) 
+starsmotto = Image.open("stars_motto.JPG").convert("RGBA")
+starsmotto = starsmotto.resize((400, 360), Image.ANTIALIAS) 
 ############################################################
 class SimpleApp(object):
     def __init__(self, master, filename, width, height, xcoord, ycoord, rspan, cspan, resizeX, resizeY, **kwargs):
@@ -125,6 +131,60 @@ class SimpleApp(object):
                 time.sleep(0.002)
                 oldtime=time.time()
 ############################################################
+def fadelogos(full_logo,starsonly,starsmotto):
+    alpha = 0
+    stimulation=random.randint(30,300)
+    while True:
+        if (int(time.time())%stimulation < 2):
+            alpha = 0
+            stimulation=random.randint(61,121)
+        else:
+            pass
+        if 1.0 > alpha:
+            new_img = Image.blend(full_logo,starsonly,alpha)
+            modifying_image = ImageTk.PhotoImage(new_img)
+            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
+            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2.grid(row=1,column=1, rowspan=5)
+            alpha = alpha + 0.05
+            time.sleep(.1)
+            root.update()
+        elif 2.0 > alpha:
+            beta=alpha-1
+            new_img = Image.blend(starsonly,starsmotto,beta)
+            modifying_image = ImageTk.PhotoImage(new_img)
+            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
+            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2.grid(row=1,column=1, rowspan=5)
+            alpha = alpha + 0.05
+            time.sleep(.1)
+            root.update()
+            pass
+        elif 3.0 > alpha:
+            beta=alpha-2
+            new_img = Image.blend(starsmotto,full_logo,beta)
+            modifying_image = ImageTk.PhotoImage(new_img)
+            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
+            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2.grid(row=1,column=1, rowspan=5)
+            alpha = alpha + 0.05
+            time.sleep(.1)
+            root.update()
+            pass
+        else:
+            time.sleep(.1)
+            beta=1
+            new_img = Image.blend(starsmotto,full_logo,beta)
+            modifying_image = ImageTk.PhotoImage(new_img)
+            canvas2 = Canvas(root, width = (500), height = (500), bg= 'black')
+            canvas2.create_image(250, 250, image=modifying_image)
+            canvas2.grid(row=1,column=1, rowspan=5)
+            root.update()
+            pass
+
+
+###############################################################
+
 clock=Label(root, padx=25, pady=10, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
 clock.grid(row=3,column=2)
 zone=Label(root, padx=2, pady=2, bd=3, fg= '#FFCA08',font=('arial',20,'bold'),text= clock_name, bg ="black", relief= FLAT)
@@ -186,5 +246,6 @@ def timer():
         clock7.config(text= timezoner(clock7_zone))
     clock.after(200, timer)
 timer()
-app = SimpleApp(root, 'logo.JPG',500,360,1,1,5,1,350,350)
+fadelogos(full_logo,starsonly,starsmotto)
+#app = SimpleApp(root, 'logo.JPG',500,360,1,1,5,1,350,350)
 root.mainloop()
