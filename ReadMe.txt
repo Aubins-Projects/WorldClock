@@ -1,1 +1,1 @@
-Repo for setting a 16x9 resolution screen with a bunch of clocks.
+Repo for setting a wonky resolution screen with a bunch of clocks.
