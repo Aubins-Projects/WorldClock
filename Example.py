@@ -2,7 +2,8 @@ from tkinter import *
 import time
 root = Tk()
 root.geometry('600x200+350+300')
-root.title("python clock designing")
+root.wm_attributes('-type', 'splash')
+
  
 timenow=''
 cframe =Frame(root, width=200, height=100, bg='green', relief=GROOVE)
