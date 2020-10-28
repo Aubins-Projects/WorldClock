@@ -1,7 +1,7 @@
 from tkinter import *
 import time
 root = Tk()
-root.geometry('2000x500+350+300')
+root.geometry('2000x500+1500+00')
 #root.wm_attributes('-fullscreen', 'true')
 root.wm_state('zoomed')
 root.overrideredirect(1)
@@ -19,7 +19,7 @@ def timer():
     newtime = time.strftime('%H: %M: %S %p')
     if newtime != timenow:
         timenow= newtime
-        clock.config(text= "timenow")
+        clock.config(text= "Can I Get a Team Now?")
     clock.after(200, timer)
 timer()
  
