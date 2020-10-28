@@ -2,8 +2,10 @@ from tkinter import *
 import time
 root = Tk()
 root.geometry('2000x500+350+300')
-root.wm_attributes('-type', 'splash')
-
+#root.wm_attributes('-fullscreen', 'true')
+root.wm_state('zoomed')
+root.overrideredirect(1)
+root.bind('<Escape>',lambda e: root.destroy())
  
 timenow=''
 cframe =Frame(root, width=200, height=100, bg='green', relief=GROOVE)
@@ -17,7 +19,7 @@ def timer():
     newtime = time.strftime('%H: %M: %S %p')
     if newtime != timenow:
         timenow= newtime
-        clock.config(text= timenow)
+        clock.config(text= "timenow")
     clock.after(200, timer)
 timer()
  
