@@ -30,6 +30,8 @@ clock7_zone = 10
 
 from tkinter import *
 import time
+from PIL import Image
+
 root = Tk()
 root.geometry('2000x500+1500+00')
 #root.wm_attributes('-fullscreen', 'true')
@@ -43,8 +45,9 @@ timenow=''
 #cframe.pack()
 
 canvas = Canvas(root, width = 150, height = 150)      
-canvas.grid(row=1, column=1)      
-img = PhotoImage(file="logo.JPG")      
+canvas.grid(row=1, column=1)
+load = Image.open("logo.JPG")      
+img = PhotoImage(file=load)      
 canvas.create_image(20,20, anchor=NW, image=img)
 
 clock=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
