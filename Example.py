@@ -30,7 +30,7 @@ clock7_zone = 10
 
 from tkinter import *
 import time
-from PIL import Image
+from PIL import Image, ImageTk
 
 root = Tk()
 root.geometry('2000x500+1500+00')
@@ -44,35 +44,54 @@ timenow=''
 #cframe =Frame(root, width=1920, height=500, bg='black', relief=GROOVE)
 #cframe.pack()
 
-canvas = Canvas(root, width = 150, height = 150)      
-canvas.grid(row=1, column=1)
-load = Image.open("logo.JPG")      
-img = PhotoImage(file=load)      
-canvas.create_image(20,20, anchor=NW, image=img)
+##########################################################
+sizex=200
+sizey=200
+
+canvas = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
+img = Image.open("logo.JPG")
+img = img.resize((400, 400), Image.ANTIALIAS)   
+img = ImageTk.PhotoImage(img)
+canvas.create_image(sizex, sizey, image=img)
+canvas.grid(row=1,column=1,rowspan=3)
+
+###########################################################
+sizex=2000
+sizey=200
+
+canvas = Canvas(root, width = (2*sizex), height = (2*sizey), bg= 'black')  
+img = Image.open("hunters.JPG")
+img = img.resize((200, 2000), Image.ANTIALIAS)   
+img = ImageTk.PhotoImage(img)
+canvas.create_image(sizex, sizey, image=img)
+canvas.grid(row=1,column=2,columnspan=3)
+
+
+############################################################
 
 clock=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= timenow,bg='#292929', relief= SUNKEN)
-clock.grid(row=2,column=1)
+clock.grid(row=2,column=2)
 
 clock1=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "",bg='#292929', relief= SUNKEN)
-clock1.grid(row=2,column=2)
+clock1.grid(row=2,column=3)
 
 clock2=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock2.grid(row=2,column=3)
+clock2.grid(row=2,column=4)
 
 clock3=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock3.grid(row=2,column=4)
+clock3.grid(row=2,column=5)
 
 clock4=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "both",bg='#292929', relief= SUNKEN)
-clock4.grid(row=3,column=1)
+clock4.grid(row=3,column=2)
 
 clock5=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock5.grid(row=3,column=2)
+clock5.grid(row=3,column=3)
 
 clock6=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock6.grid(row=3,column=3)
+clock6.grid(row=3,column=4)
 
 clock7=Label(root, padx=25, pady=40, bd=3, fg= '#FFCA08',font=('arial',48,'bold'),text= "test",bg='#292929', relief= SUNKEN)
-clock7.grid(row=3,column=4)
+clock7.grid(row=3,column=5)
 
 def timezoner(hours):
     global timenow
